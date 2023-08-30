@@ -25,7 +25,7 @@ def get_temp_directory_for_date(required_date=datetime.date.today(), temp_dir=DE
     :param temp_dir: The base temp directory to use
     :return: The path of the temp directory
     """
-    return os.path.join(temp_dir, required_date.strftime("%Y-%m-%d"))
+    return os.path.join(temp_dir, required_date.strftime("%Y-%m-%d"), "")
 
 
 def main():
