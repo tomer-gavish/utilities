@@ -1,10 +1,11 @@
 import os
 import argparse
 import datetime
+import subprocess
 import win32clipboard
 
 DEFAULT_TEMP_DIR = r'C:\Temp'
-TOTALCMD_PATH = r'C:\totalcmd\totalcmd64.exe'
+TOTALCMD_PATH = r'C:\Program Files\totalcmd\TOTALCMD64.EXE'
 
 
 def copy_to_clipboard(text):
@@ -49,7 +50,7 @@ def main():
         copy_to_clipboard(temp_dir_path)
 
     if args.open:
-        os.system(f'{TOTALCMD_PATH} "{temp_dir_path}"')
+        subprocess.run([TOTALCMD_PATH, temp_dir_path])
 
 
 if __name__ == "__main__":
